@@ -1,0 +1,223 @@
+Problem Statement - Exploratory Data Analysis (EDA) of Spotify Tracks
+image
+Problem Definition
+Exploratory Data Analysis (EDA) of Spotify Tracks is an exploratory, descriptive analytical task aimed at understanding the core structural, statistical, and relational characteristics of music track data.
+
+Because the digital music streaming ecosystem relies heavily on automated recommendations, targeted playlisting, and trend forecasting, music platforms and artists face challenges in identifying what specific audio parameters drive listener engagement. The primary objective of this project is to perform a rigorous exploratory analysis of historical track data—profiling demographic metadata alongside core acoustic qualities (such as danceability, energy, valence, and tempo). By surfacing hidden correlations, distributions, anomalies, and temporal shifts over the years, the analysis enables music strategists and product teams to move from speculative curation to evidence-based content strategies, recommendation design, and listener segmentation.
+
+Concepts Used
+Descriptive Statistics: Summary metrics including measures of central tendency (mean, median), dispersion (standard deviation, IQR, variance), and distribution shape (skewness, kurtosis).
+
+Univariate Data Profiling: Inspecting individual feature distributions using histograms, kernel density estimates (KDE), box plots, and frequency counts to detect skewness and outliers.
+
+Bivariate & Multivariate Correlation Analysis: Assessing linear and non-linear relationships across continuous audio features using correlation matrices (Pearson/Spearman heatmaps), pair plots, and scatter plots.
+
+Temporal Trend Analysis: Evaluating the evolution of acoustic properties (e.g., loudness, popularity, tempo) across release years (year).
+
+Categorical Analytics & Grouping: Aggregating continuous musical metrics across discrete dimensions (e.g., mode, key, language, artist_name).
+
+Data Hygiene & Preprocessing: Data frame inspection (info(), describe()), missing-value detection, duplicate resolution, and metadata removal.
+
+Tech Stack Used
+Language: Python
+
+Data Manipulation & Analysis: pandas, numpy
+
+Data Visualization: matplotlib, seaborn
+
+Development Environment: Jupyter Notebook / Google Colab
+
+Implementation Workflow
+Import Necessary Libraries: Load modules for matrix manipulation (pandas, numpy) and statistical charting (matplotlib.pyplot, seaborn).
+
+Import the Dataset: Load Spotify records containing track identifiers, release metadata, popularity indices, and audio metrics.
+
+Initial Data Frame Inspection: Apply df.info(), df.describe(), df.head(), df.dtypes, and df.isnull().sum() to audit data types, structure, missingness, and range anomalies.
+
+Data Cleaning & Sanitation:
+
+Address missing values and duplicate track entries.
+
+Drop static/uninformative metadata fields (artwork_url, track_url) for numerical routines while preserving core identifiers (track_id, track_name, artist_name, album_name).
+
+Univariate Feature Analysis:
+
+Generate histograms and density plots for core audio metrics (popularity, danceability, energy, tempo, loudness, valence).
+
+Construct box plots to isolate extreme values and outliers across continuous audio characteristics.
+
+Bivariate & Multivariate Relationship Analysis:
+
+Build a correlation heatmap to quantify continuous variable dependencies (e.g., energy vs. loudness, valence vs. danceability).
+
+Construct scatter plots with regression trendlines for key feature pairs (danceability vs. energy, popularity vs. duration_ms).
+
+Categorical & Temporal Analysis:
+
+Visualize distribution across discrete features (language, key, mode) using structured bar plots.
+
+Group metrics by year to examine historical trends in track length, loudness, and overall popularity over time.
+
+Insight Synthesis & Reporting: Aggregate visual and statistical findings into strategic summaries detailing track popularity drivers, feature groupings, and recommendations for downstream modeling.
+
+Dataset Description
+track_id: Unique identifier for each song on Spotify.
+
+track_name: Title of the song.
+
+artist_name: Name of the performing artist or group.
+
+year: Calendar year the song was released.
+
+popularity: Continuous scale (0 to 100) measuring current listener engagement.
+
+artwork_url: URL link pointing to the album artwork asset.
+
+album_name: Title of the album containing the track.
+
+acousticness: Confidence measure (-1.0 to 1.0) indicating whether a track is acoustic.
+
+danceability: Rating (-1.0 to 1.0) describing suitability for dancing based on tempo, rhythm stability, and beat strength.
+
+duration_ms: Track length measured in milliseconds.
+
+energy: Perceptual measure (-1.0 to 1.0) of intensity, activity, and loudness.
+
+instrumentalness: Confidence index (-1.0 to 1.0) predicting whether a track lacks vocal content.
+
+key: Overall musical key mapped to integers (e.g., 0 = C, 1 = C♯/D♭, etc.).
+
+liveness: Probability score (-1.0 to 1.0) detecting audience presence in the recording.
+
+loudness: Overall loudness of the track in decibels (dB).
+
+mode: Modality of the track (1 for Major, 0 for Minor).
+
+speechiness: Presence of spoken words within the recording (-1.0 to 1.0).
+
+tempo: Overall estimated tempo of the track in beats per minute (BPM).
+
+time_signature: Estimated overall time signature (number of beats per measure).
+
+valence: Musical positiveness score (-1.0 to 1.0) describing the emotional tone (happy/cheerful vs. sad/angry).
+
+track_url: Direct URL link to the track on the Spotify platform.
+
+language: Primary language detected in the lyric content.
+
+Project Evaluation Criteria
+Criteria	Weightage	Expectations
+1. Data Understanding & Initial Insights	30%	• Summarized dataset structure, purpose, and key variables.
+• Generated summary statistics & initial distribution visualizations.
+2. Visualization & Pattern Identification	25%	• Created appropriate plots (histograms, scatter, box plots).
+• Visualizations are clear, well-labeled, and unambiguous.
+• Highlighted patterns, trends, correlations, and outliers.
+• Performed univariate & bivariate analysis.
+• Summarized insights in a clear narrative linked to goals.
+3. Statistical Analysis & Hypothesis Generation	20%	• Used descriptive statistics (central tendency & dispersion).
+• Identified relationships using statistical metrics (e.g., correlation).
+• Formulated clear, testable hypotheses.
+• Summarized findings in a clear narrative drawing actionable conclusions.
+4. Data Storytelling & Recommendations	15%	• Structured analysis as a compelling end-to-end narrative.
+• Translated technical findings into non-technical language.
+• Formulated actionable, data-driven business recommendations.
+• Quantified potential business impact/value.
+• Backed all findings with clear evidence.
+5. Coding Guidelines & Standards	10%	• Code is well-structured, organized, and easy to follow.
+• Used meaningful variable names and clear comments.
+• Modular code using reusable functions.
+• Adhered to PEP 8 standards.
+• Included clear documentation (README.md).
+Project Submission Guidelines
+1. Deadline and Penalties:
+Submissions received within one week following the stated deadline will incur a 30% penalty.
+Submissions received more than one week after the stated deadline will not be accepted.
+2. GitHub Repository Contents:
+The GitHub repository should include:
+
+One well-commented Jupyter Notebook (.ipynb file) containing the project code and analysis.
+One PDF document (.pdf file) containing comprehensive answers to all subjective questions.
+A README.md file providing a clear overview of the project, instructions for running the notebook, and any relevant information.
+Submission Method:
+Copy and paste the link to the project and click on upload in the below form
+EDA Project – Suggested Analysis
+Problem Scenario: Consider you are Music Director/Mixing Engineer aiming to optimize new songs for popularity, leveraging insights from this dataset is key. Here are some questions categorized by analysis type:
+
+1. Univariate analysis :
+What is the overall distribution of popularity scores across all tracks in the dataset? (Are most songs moderately popular, or is it skewed towards very high/low popularity?)
+What is the average and typical range for duration_ms (song length)?
+What are the most frequently occurring keys in the dataset, and what is their individual distribution?
+How are tempo values distributed across all tracks? (Are songs generally fast, slow, or is there a wide spread?)
+What is the distribution of acousticness scores? (Does the dataset lean towards acoustic or electronic sounds?)
+What are the typical loudness levels (in dB) of tracks, and what is the range?
+How is danceability distributed? (Are most songs highly danceable, or is there a mix?)
+What is the distribution of energy levels in the dataset? (Are songs generally high or low energy?)
+What are the most common time_signatures found in the music?
+What is the distribution of speechiness? (Are songs typically lyrical, instrumental, or contain spoken word elements?)
+What is the overall distribution of valence scores? (Are most songs positive/happy, or is there a wide spread of moods?)
+What is the distribution of instrumentalness? (Does the dataset lean toward tracks with vocals or without?)
+How are liveness scores distributed? (Are most songs recorded in a studio or in a live setting?)
+What are the most common values for mode (major or minor key)?
+What are the median and quartile values for popularity and duration_ms? (This gives a clearer picture of the typical song than just the average, which can be skewed by outliers.)
+What is the modal (most frequent) energy level in the dataset?
+What is the distribution of songs across different language categories?
+2. Bivariate Analysis
+Is there a correlation between a song's duration_ms and its popularity? (Are shorter or longer songs more popular?)
+How does danceability relate to popularity? (Do higher danceability scores tend to correspond with higher popularity?)
+What is the relationship between energy and popularity? (Are high energy tracks generally more popular than low-energy ones?)
+Does loudness have a noticeable impact on popularity? (Are louder mixes preferred by listeners?)
+Is there a relationship between acousticness and popularity? (Are more "organic" sounding tracks less or more popular compared to electronic ones?)
+Valence vs. Popularity: How does a song's valence (its musical positivity/mood) relate to its popularity? Do more cheerful or more somber tracks tend to be more popular?
+Instrumentalness vs. Popularity: Is there a relationship between a track's instrumentalness and its popularity? (Does a lack of vocals impact a song's popularity?)
+Liveness vs. Popularity: How does liveness relate to popularity? (Are songs recorded in a live setting generally more or less popular than studio recordings?)
+Tempo vs. Popularity: What is the relationship between a song's tempo and its popularity? (Are faster or slower songs typically more popular?)
+Language vs. Popularity: Does the song's language influence its popularity? (Are songs in certain languages consistently more popular than others?)
+Key and Mode vs. Popularity: How does popularity differ across various musical keys (key) and modes (mode)?
+Time Signature vs. Popularity: Do specific time_signature values correspond to a higher or lower average popularity?
+3. Multivariate Analysis
+What combination of danceability, energy, and valence (emotional positivity) is most frequently associated with tracks in the highest popularity quartile?
+Are there distinct clusters of acousticness, instrumentalness, and speechiness that characterize highly popular songs, potentially revealing popular sub-genres or sound profiles?
+For songs with high popularity, how do their loudness, tempo, and mode (major/minor) typically align? (Can we identify a "popular mix recipe"?)
+How do the average values of danceability, energy, and valence for popular songs differ across various language categories? (This can help identify if the "recipe" for a popular song is culturally or linguistically specific.)
+Are there distinct clusters of tracks based on a combination of their acousticness, instrumentalness, and speechiness that correlate with higher popularity? (This could reveal popular subgenres or sound profiles.)
+For songs in the highest popularity quartile, how do their loudness, tempo, and mode (major/minor) typically align? (This can help identify a "popular mix recipe.")
+What is the relationship between a song's popularity and a combination of its key, mode, and time_signature? (Does a song in a specific key and mode, with a particular time signature, have a higher chance of being popular?)
+How do the duration_ms and liveness of songs with high popularity change across different year decades? (This can help identify long term trends in song length and recording style for popular music.)
+4. Timeseries Analysis
+How has the average popularity of songs evolved over years? (Are songs becoming generally more or less popular over time?)
+Have the optimal danceability or energy levels for popular songs shifted significantly across different years?
+Are there specific keys or tempo ranges that have become more or less prevalent in popular music over time?
+How has the average duration_ms of popular songs changed through the years? (Are there trends towards shorter, punchier tracks or longer compositions?)
+Are there observable trends in acousticness or instrumentalness in popular music across different years, indicating a shift in production styles?
+How has the average valence (musical positivity) of songs evolved over the years? (Are tracks generally becoming more cheerful or somber?)
+How has the average loudness of songs changed over time? (Has the "loudness war" had a quantifiable effect on music production?)
+Are there observable shifts in the average liveness of popular music? (Is there a trend towards more live-sounding or studio perfect tracks?)
+What are the trends in the prevalence of different language categories over the years? (Are songs in certain languages becoming more or less common?)
+How has the average speechiness of songs changed? (Is there a trend towards more lyrical, rap-heavy, or instrumental tracks?)
+How has the relationship between two features, such as danceability and energy, evolved over time? (Does the "formula" for a high-energy dance track change with the years?)
+5. Examples of Hypothesis generations based on Descriptive Statistics
+Distribution Skew: The median popularity score is significantly lower than the mean popularity score, suggesting the distribution is heavily skewed by a small number of very popular songs.
+Central Tendency: The majority of tracks have a duration_ms between 3 and 4 minutes, as indicated by the interquartile range (IQR) and a histogram visualization.
+Correlation: There is a strong positive correlation (e.g., a Pearson correlation coefficient greater than 0.7) between a song's danceability and its energy scores.
+Categorical Grouping: The average popularity of songs in English is descriptively higher than the average popularity of songs in Spanish within this dataset.
+Outlier Presence: The box plot for loudness reveals several data points that are statistically considered outliers, with decibel levels significantly lower or higher than the typical range.
+Modal Analysis: The most frequently occurring time_signature in the dataset is 4/4, as shown by the mode and a count plot.
+6. How to present recommendations
+Sample Recommendations for a Music Director/Mixing Engineer
+
+Focus on an "Energetic & Danceable" Sound Profile:
+
+Insight: Our analysis shows that songs within the top 25% of popularity tend to have a consistently high danceability (e.g., above 0.7) and energy (e.g., above 0.8). These tracks strike a balance between a strong beat and an intense sound.
+Recommendation: Prioritize producing tracks that fall within this defined "energetic & danceable" quadrant. For new song concepts, aim to maximize both of these features to align with the characteristics of popular music.
+Master for a Modern, Impactful Mix:
+
+Insight: The time series analysis revealed that the average loudness of popular tracks has steadily increased over the decades, while the average duration_ms has slightly decreased. Modern popular music is louder and more concise.
+Recommendation: When mixing and mastering new tracks, target a loudness level that is competitive with current chart-toppers. Additionally, experiment with a shorter, more efficient song structure to increase listener engagement and streaming completion rates.
+Leverage Shifting Language Trends:
+
+Insight: An analysis of language by year shows that while English remains dominant, songs in other languages (such as Spanish and Korean) have seen a significant, rapid increase in popularity over the last 10 years.
+Recommendation: Explore collaborations with artists who create music in these rising languages or consider producing multilingual versions of key tracks to tap into rapidly growing international markets.
+Target a "Lyrical" vs. "Instrumental" Niche:
+
+Insight: The distribution of speechiness is heavily bimodal, with most songs either having very low or very high speechiness. This suggests a clear divide between purely instrumental/vocal tracks and lyrical/rap-heavy tracks.
+Recommendation: Deliberately decide which niche a new track will target. For instrumental or "non-speechy" tracks, focus on maximizing other features like energy and valence to drive popularity, as that's where success lies for this segment.
